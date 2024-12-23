@@ -29,10 +29,14 @@ pipeline {
                         // The main branch uses the prod database config
                         flywayConfigFile = 'flyway_prod.conf'
                     }
-                    echo "flyway -v"
+
+                    // Ensure Flyway path is correct and executable
+                    echo "Checking Flyway version"
+                    bat "\"${FLYWAY_CMD}\" -v"
+
                     // Run Flyway migration with the selected config file
                     echo "Running Flyway migration for branch ${env.BRANCH_NAME} using config ${flywayConfigFile}"
-                    sh "${FLYWAY_CMD} -configFiles=${FLY_CONFIG_PATH}/${flywayConfigFile} migrate"
+                    bat "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}\\${flywayConfigFile}\" migrate"
                 }
             }
         }
