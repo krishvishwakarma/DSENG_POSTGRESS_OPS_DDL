@@ -3,7 +3,7 @@ pipeline {
     environment {
         // Correctly using forward slashes for the file path
         FLYWAY_CMD = "C:\\Program Files\\flyway\\flyway-11.1.0\\flyway"
-        FLY_CONFIG_PATH = "C:\\Program Files\\flyway\\flyway-11.1.0\\flyway\\conf"
+        FLY_CONFIG_PATH = "C:\\Program Files\\flyway\\flyway-11.1.0\\conf"
     }
     stages {
         stage('Checkout') {
