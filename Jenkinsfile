@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         // Correctly using forward slashes for the file path
-        FLYWAY_CMD = "C:/Program Files/flyway/flyway-11.1.0/flyway"
-        FLY_CONFIG_PATH = "C:/Program Files/flyway/flyway-11.1.0/flyway/conf"
+        FLYWAY_CMD = "C:\\Program Files\\flyway\\flyway-11.1.0\\flyway"
+        FLY_CONFIG_PATH = "C:\\Program Files\\flyway\\flyway-11.1.0\\flyway\\conf"
     }
     stages {
         stage('Checkout') {
@@ -29,8 +29,8 @@ pipeline {
                     
                     // Run the Flyway migration command
                     echo "Running Flyway migration for branch ${env.BRANCH_NAME} using config ${flywayConfigFile}"
-                    echo "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
-                    sh "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
+                    echo "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}\\${flywayConfigFile}\" migrate"
+                    sh "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}\\${flywayConfigFile}\" migrate"
                 }
             }
         }
