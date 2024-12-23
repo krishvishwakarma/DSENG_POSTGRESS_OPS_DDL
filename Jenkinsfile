@@ -19,7 +19,7 @@ pipeline {
                     def flywayConfigFile = ''
                     if (env.BRANCH_NAME.startsWith('feature')) {
                         flywayConfigFile = 'flyway_dev.conf'
-                    } else if (env.BRANCH_NAME == 'dev') {
+                    } else if (env.BRANCH_NAME == 'develop') {
                         flywayConfigFile = 'flyway_dev.conf'
                     } else if (env.BRANCH_NAME == 'qa') {
                         flywayConfigFile = 'flyway_qa.conf'
