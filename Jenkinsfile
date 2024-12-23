@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        FLYWAY_CMD = "flyway"
+        FLYWAY_CMD = "C:\Program Files\flyway\flyway-11.1.0\flyway"
     }
     stages {
         stage('Checkout') {
