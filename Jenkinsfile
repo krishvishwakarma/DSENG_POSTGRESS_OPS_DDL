@@ -27,10 +27,9 @@ pipeline {
                         flywayConfigFile = 'flyway_prod.conf'
                     }
                     
-                    // Run the Flyway migration command
+                    // Run the Flyway migration command using the correct path and quotation
                     echo "Running Flyway migration for branch ${env.BRANCH_NAME} using config ${flywayConfigFile}"
-                    echo "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
-                    sh "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
+                    bat "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
                 }
             }
         }
