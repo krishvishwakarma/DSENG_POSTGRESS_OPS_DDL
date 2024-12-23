@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        FLYWAY_CMD = "C:/Program Files/flyway/flyway-11.1.0/flyway"
-        FLY_CONFIG_PATH = "C:/Program Files/flyway/flyway-11.1.0/flyway/conf"
+        FLYWAY_CMD = "C:\Program Files\flyway\flyway-11.1.0\flyway"
+        FLY_CONFIG_PATH = "C:\Program Files\flyway\flyway-11.1.0\flyway\conf"
     }
     stages {
         stage('Checkout') {
