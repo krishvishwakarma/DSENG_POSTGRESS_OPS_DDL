@@ -29,6 +29,7 @@ pipeline {
                     
                     // Run the Flyway migration command
                     echo "Running Flyway migration for branch ${env.BRANCH_NAME} using config ${flywayConfigFile}"
+                    echo "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
                     sh "\"${FLYWAY_CMD}\" -configFiles=\"${FLY_CONFIG_PATH}/${flywayConfigFile}\" migrate"
                 }
             }
