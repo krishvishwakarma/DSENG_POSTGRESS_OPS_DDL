@@ -28,7 +28,7 @@ pipeline {
                         // The main branch uses the prod database config
                         flywayConfigFile = 'flyway_prod.conf'
                     }
-
+                    echo "flyway -v"
                     // Run Flyway migration with the selected config file
                     echo "Running Flyway migration for branch ${env.BRANCH_NAME} using config ${flywayConfigFile}"
                     sh "${FLYWAY_CMD} -configFiles=${flywayConfigFile} migrate"
